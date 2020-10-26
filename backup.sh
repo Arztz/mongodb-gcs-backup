@@ -48,6 +48,7 @@ backup() {
 
   cmd="mongodump --host=\"$MONGODB_HOST\" --port=\"$MONGODB_PORT\" $cmd_auth_part $cmd_db_part $cmd_oplog_part --gzip --archive=$BACKUP_DIR/$archive_name $MONGODB_FLAG"
   echo "starting to backup MongoDB host=$MONGODB_HOST port=$MONGODB_PORT"
+  echo $cmd
   eval "$cmd"
 }
 
